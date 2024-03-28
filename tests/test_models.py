@@ -132,3 +132,12 @@ class TestProductModel(unittest.TestCase):
         self.assertEqual(products[0].description, "testing")
 
 
+
+    def test_delete_a_product(self):
+        product = ProductFactory() # product object
+        product.create() # creating a product
+        self.assertEqual(len(Product.all()), 1) #checking to see if product is occupied
+        product.delete() # deleting product
+        self.assertEqual(len(Product.all()), 0) # asserting that Product is empty
+
+
