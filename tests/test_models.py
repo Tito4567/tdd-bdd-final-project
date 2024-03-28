@@ -117,18 +117,18 @@ class TestProductModel(unittest.TestCase):
 	self.assertEqual(found_product.description, product.description) # assertion of product description
 
    def test_update_a_product(self):
-        	product = ProductFactory()
-        	product.id = None
-        	product.create()
-        	self.assertIsNotNone(product.id)
-        	product.description = "testing" # Filling in description
-        	original_id = product.id # Getting product ID
-        	product.update() # updating product ID
-        	self.assertEqual(product.id, original_id)
-        	self.assertEqual(product.description, "testing")
-         	products = Product.all()
-        	self.assertEqual(len(products), 1) # asserting that products is occupied
-        	self.assertEqual(products[0].id, original_id)
-        	self.assertEqual(products[0].description, "testing")
+        product = ProductFactory()
+        product.id = None
+        product.create()
+        self.assertIsNotNone(product.id)
+        product.description = "testing" # Filling in description
+        original_id = product.id # Getting product ID
+        product.update() # updating product ID
+        self.assertEqual(product.id, original_id)
+        self.assertEqual(product.description, "testing")
+        products = Product.all()
+        self.assertEqual(len(products), 1) # asserting that products is occupied
+        self.assertEqual(products[0].id, original_id)
+        self.assertEqual(products[0].description, "testing")
 
 
