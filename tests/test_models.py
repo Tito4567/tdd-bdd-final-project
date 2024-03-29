@@ -139,3 +139,15 @@ class TestProductModel(unittest.TestCase):
         self.assertEqual(len(Product.all()), 0) # asserting that Product is empty
 
 
+    def test_list_all_products(self):
+        products = Product.all() # Creating products object
+        self.assertEqual(products, [])
+        
+        for _ in range(5): # for loop including 2 lines below are creating 5 products 
+            product = ProductFactory() 
+            product.create()
+        
+        products = Product.all()
+        self.assertEqual(len(products), 5) # asserting there are 5 products in collection
+
+
