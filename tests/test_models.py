@@ -131,8 +131,6 @@ class TestProductModel(unittest.TestCase):
         self.assertEqual(products[0].id, original_id)
         self.assertEqual(products[0].description, "testing")
 
-
-
     def test_delete_a_product(self):
         product = ProductFactory() # product object
         product.create() # creating a product
